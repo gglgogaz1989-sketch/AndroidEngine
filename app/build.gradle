@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services' // Подключаем Google сервисы
+}
+
+android {
+    namespace 'com.androidengine'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.androidengine"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "test"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    // Чтобы Java видела библиотеки Lua
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // --- ДЛЯ СКРИПТОВ ---
+    implementation 'org.luaj:luaj-jse:3.0.1'
+
+    // --- ДЛЯ АККАУНТОВ И ОБЛАКА (Firebase) ---
+    implementation platform('com.google.firebase:firebase-bom:32.2.0')
+    implementation 'com.google.firebase:firebase-auth'         // Регистрация
+    implementation 'com.google.android.gms:play-services-auth:20.6.0' // Вход через Google
+    implementation 'com.google.firebase:firebase-storage'      // Облако для ZIP
+    implementation 'com.google.firebase:firebase-database'     // База данных для друзей
+}
+
