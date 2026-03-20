@@ -1,18 +1,33 @@
 {
   "project_info": {
-    "project_number": "123456789",
-    "project_id": "android-engine-fake"
+    "project_number": "123456789012",
+    "project_id": "android-engine-id",
+    "storage_bucket": "android-engine.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:123456789:android:123456789",
+        "mobilesdk_app_id": "1:123456789012:android:0000000000000000",
         "android_client_info": {
           "package_name": "com.androidengine"
+        }
+      },
+      "authentication_info": {
+        "google_signin_service": {
+          "supported_id_token_audience_protos": []
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaFakeKey_For_Building_Only_12345"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }
   ],
-  "configuration_version": "1"
+  "configuration_version": "3"
 }
-
